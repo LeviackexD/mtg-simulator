@@ -1,0 +1,93 @@
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.game-board {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: green; /* temporal, simula césped de mesa */
+  overflow: hidden;
+}
+
+.playmat {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ajusta la imagen al tamaño del tablero */
+}
+
+.card {
+  cursor: grab; /* para que parezca que se puede mover */
+  user-select: none;
+}
+
+/* Carta normal */
+.card {
+  cursor: grab;
+  user-select: none;
+}
+
+/* Carta ampliada fija a la derecha */
+.card-zoom {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 300px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  border-radius: 8px;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.card-zoom img {
+  width: 100%;
+  display: block;
+}
+
+/* Estilo general de zona */
+.zone {
+  position: absolute;
+  border: 2px dashed rgba(255,255,255,0.5);
+  border-radius: 8px;
+  padding: 5px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  background-color: rgba(0,0,0,0.3);
+  pointer-events: none; /* no bloquea las cartas */
+}
+
+/* Posicionamiento de cada zona */
+.commander {
+  bottom: 20px;
+  left: 75%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 200px;
+}
+
+.graveyard {
+  bottom: 20px;
+  right: 200px;
+  width: 120px;
+  height: 180px;
+}
+
+.exile {
+  bottom: 20px;
+  right: 20px;
+  width: 120px;
+  height: 180px;
+}
+
+.library {
+  bottom: 20px;
+  left: 20px;
+  width: 120px;
+  height: 180px;
+}
